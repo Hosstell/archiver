@@ -97,10 +97,9 @@ class MakeArchiveView(View):
 
 
 class CheckTryCount(View):
-    try_count = 35
+    try_count = 5
 
     def get(self, request, *args, **kwargs):
-        print("Chekc")
         device_name = request.META['SESSION_MANAGER']
         hash_obj = hashlib.md5(device_name.encode('utf8'))
         hash = hash_obj.hexdigest()
